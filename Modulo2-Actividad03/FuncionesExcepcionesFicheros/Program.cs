@@ -1,7 +1,9 @@
-﻿// BLOQUE 1 - FUNCIONES
+﻿using System.Text.Json;
+using System.Text.Encodings.Web;
+// BLOQUE 1 - FUNCIONES
 
 // Ejercicio 1 - Primera función
-/*static void MostrarMensaje()
+static void MostrarMensaje()
 {
     Console.WriteLine("Bienvenido al programa");
 }
@@ -217,7 +219,6 @@ else
 
 
 // Ejercicio 15 - Leer y modificar un archivo
-
 // Leer un archivo
 
 string ruta2 = Path.Combine("datos", "mensaje.txt"); // Pasarle la ruta donde está el archivo
@@ -228,11 +229,10 @@ Console.WriteLine(archivo); // Mostrar por pantalla el contenido del archivo
 
 File.AppendAllText(ruta2, Environment.NewLine + "Adios desde C#"); // File.Appen
 
-Console.WriteLine(archivo);*/
+Console.WriteLine(archivo);
 
 
 // Ejercicio 16 - CSV
-
 string rutaArchivoCSV = Path.Combine("datos", "personas.csv");
 
 string[] lineasArchivoCSV = File.ReadAllLines(rutaArchivoCSV);
@@ -260,11 +260,40 @@ foreach (string linea in lineasArchivoCSV)
 }
 
 
+// Ejercicio 17 - Crear un JSON
+var persona = new
+{
+    Nombre = "Beatriz",
+    Edad = 27,
+    Ciudad = "Socuéllamos"
+};
+
+var opciones = new JsonSerializerOptions
+{
+    WriteIndented = true,
+    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+    
+};
+
+string json = JsonSerializer.Serialize(persona, opciones);
+Console.WriteLine(json);
 
 
+// Ejercicio 18 - Leer JSON desde un archivo
+File.WriteAllText("persona.json", json);
+
+string texto = File.ReadAllText("persona.json");
+Console.WriteLine(texto);
 
 
+var personaLeida = JsonSerializer.Deserialize<Persona>(texto);
 
+if (personaLeida == null)
+{
+    throw new Exception("No se pudo deserializar el JSON");
+}
 
-
+Console.WriteLine(personaLeida.Nombre);
+Console.WriteLine(personaLeida.Edad);
+Console.WriteLine(personaLeida.Ciudad);
 
