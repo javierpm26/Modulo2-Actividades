@@ -1,9 +1,10 @@
 ﻿using System.Text.Json;
 using System.Text.Encodings.Web;
+using System.IO;
 // BLOQUE 1 - FUNCIONES
 
 // Ejercicio 1 - Primera función
-static void MostrarMensaje()
+/*static void MostrarMensaje()
 {
     Console.WriteLine("Bienvenido al programa");
 }
@@ -259,6 +260,8 @@ foreach (string linea in lineasArchivoCSV)
 
 }
 
+// BLOQUE 5 - JSON
+
 
 // Ejercicio 17 - Crear un JSON
 var persona = new
@@ -295,5 +298,33 @@ if (personaLeida == null)
 
 Console.WriteLine(personaLeida.Nombre);
 Console.WriteLine(personaLeida.Edad);
-Console.WriteLine(personaLeida.Ciudad);
+Console.WriteLine(personaLeida.Ciudad);*/
+
+
+
+// BLOQUE 6 - STREAMS
+// Ejercicio 19 - StreamWriter y StreamReader
+
+using (StreamWriter writer = new StreamWriter("notas.txt"))
+{
+    writer.WriteLine("Andrea - 8");
+    writer.WriteLine("Luis - 6");
+    writer.WriteLine("Carlos - 9");
+    writer.WriteLine("Marta - 7");
+}
+
+
+using (StreamReader reader = new StreamReader("notas.txt"))
+{
+    string linea = "";
+
+    while ((linea = reader.ReadLine()) != null)
+    {
+        Console.WriteLine(linea);
+    }
+}
+
+
+
+
 
