@@ -288,6 +288,17 @@ namespace FuncionesExcepcionesFicheros
             // 3. Leer el CSV
             Utilities.LeerCSV(rutaCSVcreado);
 
+            // 4. Validación de datos
+            if (!Utilities.ValidarEdadCSV(rutaCSVcreado))
+            {
+                Console.WriteLine("Hay alguna edad que no es válida");
+            }
+
+            // 5. Crear un objeto por cada persona
+            Utilities.crearObjetos2(rutaCSVcreado);
+
+
+
         }
     }
 }

@@ -1,3 +1,4 @@
+using System.Text.Json;
 namespace FuncionesExcepcionesFicheros
 {
     public static class Utilities
@@ -138,23 +139,23 @@ namespace FuncionesExcepcionesFicheros
         // 2. Crear un archivo CSV
         public static string CrearCSV()
         {
-                string rutaCSV = Path.Combine("datos", "personas.csv");
+            string rutaCSV = Path.Combine("datos", "personas.csv");
 
-                string contenidoCSV = "nombre;edad" + Environment.NewLine + "Andrea;25" + Environment.NewLine + "Luis;31" + Environment.NewLine + "Carlos;22";
+            string contenidoCSV = "nombre;edad" + Environment.NewLine + "Andrea;25" + Environment.NewLine + "Luis;31" + Environment.NewLine + "Carlos;22" + Environment.NewLine + "User;-20";
 
-                try
-                {
-                    File.WriteAllText(rutaCSV, contenidoCSV);
-                    Console.WriteLine("Archivo CSV creado correctamente");
+            try
+            {
+                File.WriteAllText(rutaCSV, contenidoCSV);
+                Console.WriteLine("Archivo CSV creado correctamente");
 
-                    return rutaCSV;
-                }
-                catch(Exception ex)
-                {
-                    Console.WriteLine($"Error al crear el archivo: {ex.Message}");
+                return rutaCSV;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al crear el archivo: {ex.Message}");
 
-                    throw;
-                }
+                throw;
+            }
         }
 
         // 3. Leer el CSV
@@ -163,7 +164,7 @@ namespace FuncionesExcepcionesFicheros
             using (StreamReader reader = new StreamReader(rutaCSV))
             {
                 reader.ReadLine();
-                
+
                 while (true)
                 {
                     var linea = reader.ReadLine();
@@ -180,6 +181,77 @@ namespace FuncionesExcepcionesFicheros
                 }
             }
         }
+
+        // 4. Validad la edad
+
+        public static bool ValidarEdadCSV(string rutaCSV)
+        {
+
+            string[] lineas = File.ReadAllLines(rutaCSV);
+            bool edadValida = true;
+
+            foreach (string linea in lineas.Skip(1))
+            {
+                int edad = Convert.ToInt32(linea.Split(";")[1]);
+                if (edad < 0)
+                {
+                    edadValida = false;
+                }
+            }
+            return edadValida;
+        }
+
+
+        // 5. Crear un objeto
+
+        public static void crearObjetos(string rutaCSV)
+        {
+            var infoPersonas = File.ReadLines(rutaCSV);
+
+            foreach (string linea in infoPersonas.Skip(1))
+            {
+                string[] columnas = linea.Split(";");
+
+                var persona = new
+                {
+                    Nombre = columnas[0],
+                    Edad = columnas[1]
+                };
+
+                Console.WriteLine($"Nombre = {persona.Nombre} Edad = {persona.Edad}");
+            }
+        }
+
+
+        // 6. Guardar los datos en JSON
+
+        public static void crearObjetos2(string rutaCSV)
+        {
+            var opciones = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+
+            var infoPersonas = File.ReadLines(rutaCSV);
+
+            foreach (string infoPersona in infoPersonas.Skip(1))
+            {
+                string[] columnas = infoPersona.Split(";");
+
+                var datosPersona = new
+                {
+                    Nombre = columnas[0],
+                    Edad = columnas[1]
+                };
+
+                string json = JsonSerializer.Serialize(datosPersona, opciones);
+
+                Console.WriteLine(json);
+            }
+
+        }
+
+
 
     }
 }
