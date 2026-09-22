@@ -1,1 +1,11 @@
-﻿Console.WriteLine("Hello, World!");
+﻿namespace PlataformaStreaming
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+        }
+
+    
+}
