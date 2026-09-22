@@ -1,18 +1,21 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using PlataformaStreaming.Interfaces;
 
 namespace Plataforma_Streaming.Entidades
 {
-    public class Audiolibro : Contenido
+    public class Audiolibro : Contenido, IDescargable
     {
         public string? Autor {get; set;}
         public string? Narrador {get; set;}
+        public bool EstaDescargado { get; set; }
 
-        public Audiolibro(string? titulo, int duracion, int reproducciones, string? autor, string? narrador) : base(titulo, duracion, reproducciones)
+        public Audiolibro(string? titulo, int duracion, int reproducciones, string? autor, string? narrador, bool estaDescargado) : base(titulo, duracion, reproducciones)
         {
             Autor = autor;
             Narrador = narrador;
+            this.EstaDescargado = estaDescargado;
         }
 
         public override void Reproducir()
@@ -23,6 +26,16 @@ namespace Plataforma_Streaming.Entidades
             Console.WriteLine($"Autor: {this.Autor}");
             Console.WriteLine($"Narrador: {this.Narrador}");
             Console.WriteLine($"Reproducciones: {this.Reproducciones}");
+        }
+
+        public void Descargar()
+        {
+            this.EstaDescargado = true;
+        }
+
+        public void EliminarDescarga()
+        {
+            this.EstaDescargado = false;
         }
 
     }  

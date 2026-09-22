@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PlataformaStreaming.Interfaces
 {
-    internal interface IDescargable
+    public interface IDescargable
     {
         void Descargar();
         void EliminarDescarga();
