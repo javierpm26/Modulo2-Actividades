@@ -18,7 +18,8 @@ namespace Plataforma_Streaming.Entidades
 
         public override void Reproducir()
         {
-            Console.WriteLine($"Reproduciendo audiolibro: {this.Titulo}\nPresentador: {this.Presentador}\nEpisodio: {this.numeroEpisodio}\nReproducciones: {this.Reproducciones}");
+            this.Reproducciones++;
+            Console.WriteLine($"Reproduciendo podcast: {this.Titulo}\nPresentador: {this.Presentador}\nEpisodio: {this.numeroEpisodio}\nReproducciones: {this.Reproducciones}");
         }
 
     }  
