@@ -20,7 +20,6 @@ namespace Plataforma_Streaming.Entidades
         public int Reproducciones { get; set; }
 
 
-
         public virtual void MostrarInformacion()
         {
             Console.WriteLine($"Titulo: {this.Titulo}");
