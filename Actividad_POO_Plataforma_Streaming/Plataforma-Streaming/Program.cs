@@ -8,18 +8,18 @@ namespace PlataformaStreaming
         {
             Cancion cancion1 = new Cancion(
                 "Faded",
-                330,
+                213,
                 0,
                 "Alan Walker",
-                "EDM",
+                "Electronic Dance Music",
                 false);
 
             Cancion cancion2 = new Cancion(
-                "Alone",
-                416,
+                "The Fate of Ophelia",
+                227,
                 0,
-                "Marshmello",
-                "EDM",
+                "Taylor Swift",
+                "Dance Pop",
                 false);
 
             Podcast podcast1 = new Podcast(
