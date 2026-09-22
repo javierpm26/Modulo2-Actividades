@@ -27,5 +27,8 @@ namespace Plataforma_Streaming.Entidades
             Console.WriteLine($"Duración: {this.Duracion}");
             Console.WriteLine($"Reproducciones Totales: {this.Reproducciones}");
         }
+
+        public abstract void Reproducir();
+        
     }
 }
