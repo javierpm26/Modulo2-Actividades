@@ -23,8 +23,6 @@ namespace Plataforma_Streaming.Entidades
             this.Reproducciones++;
 
             Console.WriteLine($"Reproduciendo audiolibro: {this.Titulo}");
-            Console.WriteLine($"Autor: {this.Autor}");
-            Console.WriteLine($"Narrador: {this.Narrador}");
             Console.WriteLine($"Reproducciones: {this.Reproducciones}");
         }
 

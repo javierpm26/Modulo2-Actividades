@@ -57,6 +57,20 @@ namespace PlataformaStreaming
                 Console.WriteLine();
             }
 
+            Console.WriteLine("====================================");
+            Console.WriteLine("REPRODUCCIÓN");
+            Console.WriteLine("====================================");
+            
+            foreach (Contenido reproducir in contenidosApp)
+            {
+                reproducir.Reproducir();
+                Console.WriteLine();
+            }
+
+
+
+
+
         }
 
 

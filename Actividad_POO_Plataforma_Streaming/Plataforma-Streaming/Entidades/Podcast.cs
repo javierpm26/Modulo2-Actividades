@@ -19,7 +19,7 @@ namespace Plataforma_Streaming.Entidades
         {
             this.Reproducciones++;
 
-            Console.WriteLine($"Reproduciendo podcast: {this.Titulo}\nPresentador: {this.Presentador}\nEpisodio: {this.numeroEpisodio}\nReproducciones: {this.Reproducciones}");
+            Console.WriteLine($"Reproduciendo podcast: {this.Titulo}\nReproducciones: {this.Reproducciones}");
         }
 
         public override void MostrarInformacion()

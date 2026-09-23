@@ -20,7 +20,7 @@ namespace Plataforma_Streaming.Entidades
 
         public override void Reproducir()
         {
-            Console.WriteLine($"Reproduciendo: {this.Titulo}\nArtista: {this.Artista}");
+            Console.WriteLine($"Reproduciendo: {this.Titulo}");
             this.Reproducciones++;
             Console.WriteLine($"Reproducciones: {this.Reproducciones}");
         }
