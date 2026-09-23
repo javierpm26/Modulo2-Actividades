@@ -86,6 +86,56 @@ namespace PlataformaStreaming
                 }
             }
 
+
+            // Escaner para pedir al usuario que contenido ya descargado desea borrar
+            Console.WriteLine("Elije el elemento descargado que deseas borrar: ");
+            string respuesta = Console.ReadLine() ?? "";
+
+            // bucle for para recorrer de nuevo el array con los objetos creados
+            for (int indice = 0; indice < contenidosApp.Length; indice++)
+            {
+                // Primer if para comprobar si lo que hay en el array tiene el atributo descargable
+                if (contenidosApp[indice] is IDescargable descargable)
+                {
+                    // Segundo if para comparar lo que el usuario ha introducido por teclado es igual a lo que hay en el array para borrarlo
+                    if (respuesta == contenidosApp[indice].Titulo)
+                    {
+                        Console.WriteLine($"Eliminando descarga de {contenidosApp[indice].Titulo}");
+                        descargable.EliminarDescarga();
+                        
+                        // Tercer if para comprobar si el objeto que el usuario ha borrado se encuentra descargado.
+                        if (contenidosApp[indice] is Cancion descargada)
+                        {
+                            Console.WriteLine($"{contenidosApp[indice].Titulo} -> Descargado: {descargada.EstaDescargado}");
+                        }
+
+                        
+                    }
+                }
+            }
+
+            
+            /*
+             Esto borra todos los contenidos descargados
+            for (int indice = 0; indice < contenidosApp.Length; indice++)
+            {
+                if (contenidosApp[indice] is IDescargable descargable)
+                {
+                    Console.WriteLine($"Eliminando descarga de {contenidosApp[indice].Titulo}");
+                    descargable.EliminarDescarga();
+
+                }
+            } 
+            */
+
+
+            
+
+            
+            /*
+            
+            */
+
         }
 
     }
