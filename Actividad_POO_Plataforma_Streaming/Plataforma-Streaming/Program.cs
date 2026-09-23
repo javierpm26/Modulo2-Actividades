@@ -52,6 +52,7 @@ namespace PlataformaStreaming
 
             foreach(Contenido contenido in contenidosApp)
             {
+                Console.WriteLine(contenido.GetType().Name);
                 contenido.MostrarInformacion();
                 Console.WriteLine();
             }

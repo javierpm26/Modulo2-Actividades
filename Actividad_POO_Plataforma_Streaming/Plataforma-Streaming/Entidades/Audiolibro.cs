@@ -28,6 +28,15 @@ namespace Plataforma_Streaming.Entidades
             Console.WriteLine($"Reproducciones: {this.Reproducciones}");
         }
 
+        public override void MostrarInformacion()
+        {
+            Console.WriteLine($"Titulo: {this.Titulo}");
+            Console.WriteLine($"Duración: {this.Duracion}");
+            Console.WriteLine($"Reproducciones Totales: {this.Reproducciones}");
+            Console.WriteLine($"Autor: {this.Autor}");
+            Console.WriteLine($"Narrador: {this.Narrador}");
+        }
+
         public void Descargar()
         {
             this.EstaDescargado = true;
