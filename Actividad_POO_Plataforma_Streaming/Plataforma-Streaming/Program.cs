@@ -75,6 +75,25 @@ namespace PlataformaStreaming
             
             for(int i = 0; i < contenidosApp.Length; i++)
             {
+                if(contenidosApp[i] is Cancion cancionDescargable)
+                {
+                    cancionDescargable.Descargar();
+                    Console.WriteLine($"{cancionDescargable.Titulo} -> Descargado");
+                }
+                else if(contenidosApp[i] is Audiolibro audiolibroDescargable)
+                {
+                    audiolibroDescargable.Descargar();
+                    Console.WriteLine($"{audiolibroDescargable.Titulo} -> Descargado");
+                }
+                else
+                {
+                    Console.WriteLine($"{contenidosApp[i].Titulo} -> No disponible para descarga");
+                }
+            }
+            
+            /*
+            for(int i = 0; i < contenidosApp.Length; i++)
+            {
                 if(contenidosApp[i] is IDescargable descargable)
                 {
                     descargable.Descargar();
@@ -85,7 +104,7 @@ namespace PlataformaStreaming
                     Console.WriteLine($"{contenidosApp[i].Titulo} -> No disponible para descarga");
                 }
             }
-
+            */
 
             // Escaner para pedir al usuario que contenido ya descargado desea borrar
             Console.WriteLine("Elije el elemento descargado que deseas borrar: ");
@@ -113,7 +132,6 @@ namespace PlataformaStreaming
                     }
                 }
             }
-
             
             /*
              Esto borra todos los contenidos descargados
@@ -128,13 +146,6 @@ namespace PlataformaStreaming
             } 
             */
 
-
-            
-
-            
-            /*
-            
-            */
 
         }
 
