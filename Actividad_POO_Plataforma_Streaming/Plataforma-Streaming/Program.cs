@@ -1,4 +1,5 @@
 ﻿using Plataforma_Streaming.Entidades;
+using PlataformaStreaming.Interfaces;
 
 namespace PlataformaStreaming
 {
@@ -67,12 +68,25 @@ namespace PlataformaStreaming
                 Console.WriteLine();
             }
 
-
-
-
+            
+            Console.WriteLine("====================================");
+            Console.WriteLine("DESCARGAS");
+            Console.WriteLine("====================================");
+            
+            for(int i = 0; i < contenidosApp.Length; i++)
+            {
+                if(contenidosApp[i] is IDescargable descargable)
+                {
+                    descargable.Descargar();
+                    Console.WriteLine($"{contenidosApp[i].Titulo} -> Descargado");
+                }
+                else
+                {
+                    Console.WriteLine($"{contenidosApp[i].Titulo} -> No disponible para descarga");
+                }
+            }
 
         }
-
 
     }
 }
