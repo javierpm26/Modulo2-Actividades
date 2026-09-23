@@ -1,4 +1,5 @@
 ﻿using Plataforma_Streaming.Entidades;
+using PlataformaStreaming.Entidades;
 using PlataformaStreaming.Interfaces;
 
 namespace PlataformaStreaming
@@ -45,7 +46,23 @@ namespace PlataformaStreaming
                 "Juan Magraner",
                 true);
 
-            Contenido[] contenidosApp = {cancion1, cancion2, podcast1, podcast2, audiolibro};
+            Video video1 = new Video(
+                "Lo que NO te contaron de DLSS 5 (Y los videojuegos realistas)",
+                2335,
+                0,
+                "Tecnología/Informática/Gaming",
+                60,
+                false);
+
+            Video video2 = new Video(
+                "¡¡Última hora del mercado de pilotos F1 2026!!",
+                1867,
+                0,
+                "Noticias/Deportes/Motor/Automovilismo",
+                30,
+                false);
+
+            Contenido[] contenidosApp = {cancion1, cancion2, podcast1, podcast2, audiolibro, video1, video2};
 
             Console.WriteLine("====================================");
             Console.WriteLine("CONTENIDOS DE LA APP");
@@ -84,6 +101,10 @@ namespace PlataformaStreaming
                 {
                     audiolibroDescargable.Descargar();
                     Console.WriteLine($"{audiolibroDescargable.Titulo} -> Descargado");
+                }
+                else if (contenidosApp[i] is Video videoDescargable)
+                {
+                    Console.WriteLine($"{videoDescargable.Titulo} -> Descargado");
                 }
                 else
                 {
@@ -128,10 +149,29 @@ namespace PlataformaStreaming
                             Console.WriteLine($"{contenidosApp[indice].Titulo} -> Descargado: {descargada.EstaDescargado}");
                         }
 
+                        if (contenidosApp[indice] is Video descargado)
+                        {
+                            Console.WriteLine($"{contenidosApp[indice].Titulo} -> Descargado: {descargado.EstaDescargado}");
+                        }
+
+                        if (contenidosApp[indice] is Audiolibro descargadoAudioLibro)
+                        {
+                            Console.WriteLine($"{contenidosApp[indice].Titulo} -> Descargado: {descargadoAudioLibro.EstaDescargado}");
+                        }
+
                         
                     }
                 }
             }
+
+            // PARTE 13 - RETO OPCIONAL 
+            // Añadir un nuevo tipo de contenido a nuestra plataforma de streaming el video.
+
+
+
+
+
+
             
             /*
              Esto borra todos los contenidos descargados
