@@ -44,6 +44,18 @@ namespace PlataformaStreaming
                 "Juan Magraner",
                 true);
 
+            Contenido[] contenidosApp = {cancion1, cancion2, podcast1, podcast2, audiolibro};
+
+            Console.WriteLine("====================================");
+            Console.WriteLine("CONTENIDOS DE LA APP");
+            Console.WriteLine("====================================");
+
+            foreach(Contenido contenido in contenidosApp)
+            {
+                contenido.MostrarInformacion();
+                Console.WriteLine();
+            }
+
         }
 
 
