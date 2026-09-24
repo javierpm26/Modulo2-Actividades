@@ -31,7 +31,12 @@ namespace EstructurasDeDatos
 
 
             //PARTE 3 - COLAS
-            Colas.colaSupermercado();
+
+            // Ejercicio 7 - Cola del supermercado
+            //Colas.colaSupermercado();
+
+            // Ejercicio 8 - Servicio de soporte
+            Colas.servicioSoporte();
         }
     }
 }
