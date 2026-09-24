@@ -2,6 +2,7 @@ namespace EstructurasDeDatos.Utilities
 {
     public static class Pilas
     {
+        // Ejercicio 4 - Deshacer cambios
         public static void DeshacerCambios()
         {
             Stack<string> accionesUsuario = new Stack<string>();
@@ -40,5 +41,36 @@ namespace EstructurasDeDatos.Utilities
             }
 
         }
+
+        public static void NavegadorWeb()
+        {
+            Stack<string> historialNavegador = new Stack<string>();
+
+            historialNavegador.Push("www.google.com");
+            historialNavegador.Push("www.youtube.com");
+            historialNavegador.Push("www.instagram.com");
+            historialNavegador.Push("www.github.com");
+
+            Console.WriteLine("=== NAVEGADOR ===\n");
+            Console.WriteLine($"Página actual: {historialNavegador.Peek()}");
+            Console.WriteLine("Pulsando ATRÁS...");
+            historialNavegador.Pop();
+            Console.WriteLine($"Pagina actual: {historialNavegador.Peek()}");
+            Console.WriteLine("Pulsando ATRÁS...");
+            historialNavegador.Pop();
+            Console.WriteLine($"Pagina actual: {historialNavegador.Peek()}");
+
+         
+            historialNavegador.Push("www.tiktok.com");
+            Console.WriteLine("Nueva visita: www.tiktok.com");
+
+            Console.WriteLine($"Pagina actual: {historialNavegador.Peek()}");
+        }
+
+
+
     }
+
+
+
 }
