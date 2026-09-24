@@ -175,20 +175,112 @@ namespace EstructurasDeDatos.Utilities
                         Console.WriteLine("¡¡Opción inválida!!");
                         break;
 
-                    
-
-                    
-
-
-                        
-                        
-
                 }
-
             }
         }
         
-            
+        //Ejercicio 12 - Marcador torneo
+        public static void MarcadorTorneo()
+        {
+            int opcionMenu = 0;
+            Dictionary<string, int> scoreboardTorneo = new Dictionary<string, int>();
+
+            scoreboardTorneo.Add("Alex", 50);
+            scoreboardTorneo.Add("Sara", 70);
+            scoreboardTorneo.Add("Mario", 40);
+            scoreboardTorneo.Add("Laura", 90);
+
+
+            while( opcionMenu != 6)
+            {
+                Console.WriteLine("=== MARCADOR TORNEO ===");
+
+                Console.WriteLine("1. Añadir jugador");
+                Console.WriteLine("2. Sumar puntos");
+                Console.WriteLine("3. Consultar puntos");
+                Console.WriteLine("4. Eliminar jugador");
+                Console.WriteLine("5. Mostrar clasificación");
+                Console.WriteLine("6. Salir");
+
+                Console.WriteLine();
+
+                Console.WriteLine("¿Qué quieres hacer?");
+                opcionMenu = int.Parse(Console.ReadLine() ?? "");
+
+                Console.WriteLine();
+
+                switch (opcionMenu)
+                {
+                    case 1:
+                        Console.WriteLine("Escribe el nombre del jugador a inscribir: ");
+                        string nuevoJugador = Console.ReadLine() ?? "";
+
+                        Console.WriteLine("¿Cuál es su puntuación inicial?");
+                        int nuevaPuntuacion = int.Parse(Console.ReadLine() ?? "");
+
+                        scoreboardTorneo.Add(nuevoJugador, nuevaPuntuacion);
+                        Console.WriteLine();
+
+                        break;
+
+                    case 2:
+                        Console.WriteLine("¿A qué jugador quieres añadir puntos a su marcador?");
+                        string jugadorGanador = Console.ReadLine() ?? "";
+
+                        Console.WriteLine("¿Cuántos puntos quieres añadir?");
+                        int puntuacionObtenida = int.Parse(Console.ReadLine() ?? "");
+
+                        scoreboardTorneo.TryGetValue(jugadorGanador, out int puntosActuales);
+                        scoreboardTorneo[jugadorGanador] = puntosActuales + puntuacionObtenida;
+
+                        Console.WriteLine($"Jugador: {jugadorGanador}");
+                        Console.WriteLine($"Puntos obtenidos: {puntuacionObtenida}");
+                        Console.WriteLine($"Nueva puntación de {jugadorGanador}: {scoreboardTorneo[jugadorGanador]}");
+                        Console.WriteLine();
+                        
+                        break;
+
+                    case 3:
+                        Console.WriteLine("¿De qué jugador quieres consultar su puntuación?");
+                        string consultaJugador = Console.ReadLine() ?? "";
+
+                        Console.WriteLine($"{consultaJugador} tiene una puntuación de {scoreboardTorneo[consultaJugador]} puntos");
+
+                        break;
+
+                    case 4:
+                        Console.WriteLine("Escribe el nombre del jugador que quieras eliminar: ");
+                        string borrarJugadorTorneo = Console.ReadLine() ?? "";
+
+                        scoreboardTorneo.Remove(borrarJugadorTorneo);
+                        Console.WriteLine("Jugador eliminado");
+
+                        Console.WriteLine();
+
+                        break;
+
+                    case 5:
+                        Console.WriteLine("=== CLASIFICACIÓN ===");
+
+                        foreach (KeyValuePair<string, int> infoJugador in scoreboardTorneo)
+                        {
+                            Console.WriteLine($"{infoJugador.Key}: {infoJugador.Value} puntos");
+                        }
+
+                        Console.WriteLine();
+
+                        break;
+
+                    case 6:
+                        Console.WriteLine("Saliendo del programa...");
+                        break;
+
+                    default:
+                        Console.WriteLine("Opción inválida");
+                        break;
+                }
+            }
+        }
         
     }
 }
