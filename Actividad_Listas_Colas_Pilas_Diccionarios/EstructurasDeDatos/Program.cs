@@ -28,6 +28,10 @@ namespace EstructurasDeDatos
 
             // Ejercicio 6 - Paréntesis correctos
             //Pilas.ParentesisCorrectos();
+
+
+            //PARTE 3 - COLAS
+            Colas.colaSupermercado();
         }
     }
 }
