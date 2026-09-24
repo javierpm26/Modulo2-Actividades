@@ -36,7 +36,10 @@ namespace EstructurasDeDatos
             //Colas.colaSupermercado();
 
             // Ejercicio 8 - Servicio de soporte
-            Colas.servicioSoporte();
+            //Colas.servicioSoporte();
+
+            // Ejercicio 9 - Entradas para un concierto
+            Colas.entradasConcierto();
         }
     }
 }

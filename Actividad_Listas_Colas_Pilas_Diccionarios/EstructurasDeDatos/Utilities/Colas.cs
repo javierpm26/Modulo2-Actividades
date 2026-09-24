@@ -111,5 +111,57 @@ namespace EstructurasDeDatos.Utilities
                 }
             }
         }
+
+        public static void entradasConcierto()
+        {
+            Queue<string> colaConcierto = new Queue<string>();
+            colaConcierto.Enqueue("Laura");
+            colaConcierto.Enqueue("Mario");
+            colaConcierto.Enqueue("Sara");
+            colaConcierto.Enqueue("David");
+            colaConcierto.Enqueue("Lucía");
+
+            Console.WriteLine("=== ACCESO AL CONCIERTO ===\n");
+
+            string personaQueMasEspera = colaConcierto.Last();
+            Console.WriteLine($"Persona que más espera: {personaQueMasEspera}");
+
+            Console.WriteLine("Esperando:");
+            // Mostrar la cola de espera
+            foreach (string persona in colaConcierto)
+            {
+                Console.WriteLine(persona);
+            }
+
+            // Dejar pasar a la primera persona de la cola
+            Console.WriteLine($"Entrando: {colaConcierto.Peek()}");
+            colaConcierto.Dequeue();
+
+            // Escaner para que el usuario meta una nueva persona a la cola
+            Console.WriteLine("¿Nueva persona?: ");
+            string respuestaSIoNO = Console.ReadLine() ?? "";
+            if (respuestaSIoNO == "Si" || respuestaSIoNO == "SI")
+            {
+                Console.WriteLine("Nombre: ");
+                string nuevaPersona = Console.ReadLine() ?? "";
+                colaConcierto.Enqueue(nuevaPersona);
+            }
+            else
+            {
+                Console.WriteLine("Cancelado");
+            }
+
+            Console.WriteLine("=== PERSONAS QUE SIGUEN ESPERANDO ===");
+            foreach (string personasEsperando in colaConcierto)
+            {
+                Console.WriteLine(personasEsperando);
+            }
+
+
+            
+
+
+            
+        }
     }
 }
