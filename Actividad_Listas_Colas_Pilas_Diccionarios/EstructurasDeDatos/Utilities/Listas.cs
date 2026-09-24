@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
-namespace EstructurasDeDatos.Estructuras
+﻿namespace EstructurasDeDatos.Estructuras
 {
     public static class Listas
     {
@@ -41,7 +39,89 @@ namespace EstructurasDeDatos.Estructuras
             Console.WriteLine($"\nTotal de canciones: {canciones.Count()}");
         }
 
+
         // Ejercicio 2 - Lista de la compra
+        public static void listaCompra()
+        {
+            int opcionMenu = 0;
+
+            List<string> carritoCompra = 
+            [
+                "Leche",
+                "Pan",
+                "Huevos",
+                "Pasta",
+                "Arroz"
+            ];
+
+            foreach (var item in carritoCompra)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine();
+
+            while (opcionMenu != 4)
+            {
+                Console.WriteLine("1. Mostrar lista productos");
+                Console.WriteLine("2. Añadir productos");
+                Console.WriteLine("3. Eliminar productos");
+                Console.WriteLine("4. Checkout");
+
+                Console.WriteLine();
+
+                Console.WriteLine("Elige una opción:");
+                opcionMenu = int.Parse(Console.ReadLine() ?? "");
+
+                Console.WriteLine();
+
+                switch(opcionMenu)
+                {
+                    case 1:
+                        Console.WriteLine("=== LISTA DE LA COMPRA ===");
+                    
+                        foreach (var item in carritoCompra)
+                        {
+                            Console.WriteLine(item);
+                        }
+            
+                        Console.WriteLine();
+                        break;
+
+                    case 2:
+                        Console.WriteLine("¿Qué producto quieres añadir?");
+                        string productoAnadido = Console.ReadLine() ?? "";
+                        carritoCompra.Add(productoAnadido);
+
+                        Console.WriteLine();
+                        break;
+
+                    case 3:
+                        Console.WriteLine("¿Qué producto quieres eliminar?");
+                        string productoEliminado = Console.ReadLine() ?? "";
+                        carritoCompra.Remove(productoEliminado);
+
+                        Console.WriteLine();
+                        break;
+
+                    case 4:
+                        Console.WriteLine("=== LISTA FINAL ===");
+
+                        foreach (var item in carritoCompra)
+                        {
+                            Console.WriteLine(item);
+                        }
+
+                        Console.WriteLine();
+                        Console.WriteLine($"Productos restantes: {carritoCompra.Count}");
+                        break;
+
+                    default:
+                        Console.WriteLine("Opción no válida");
+                        break;
+                }
+            }
+        }
 
 
         // Ejercicio 3 - Gestor de Tareas
