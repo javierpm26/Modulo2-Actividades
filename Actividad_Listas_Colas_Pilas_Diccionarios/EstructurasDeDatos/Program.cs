@@ -24,7 +24,10 @@ namespace EstructurasDeDatos
             //Pilas.DeshacerCambios();
 
             // Ejercicio 5 - Navegador Web
-            Pilas.NavegadorWeb();
+            //Pilas.NavegadorWeb();
+
+            // Ejercicio 6 - Paréntesis correctos
+            //Pilas.ParentesisCorrectos();
         }
     }
 }

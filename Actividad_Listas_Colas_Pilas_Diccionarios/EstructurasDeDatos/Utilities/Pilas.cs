@@ -42,6 +42,7 @@ namespace EstructurasDeDatos.Utilities
 
         }
 
+        // Ejercicio 5 - Navegador web
         public static void NavegadorWeb()
         {
             Stack<string> historialNavegador = new Stack<string>();
@@ -67,10 +68,55 @@ namespace EstructurasDeDatos.Utilities
             Console.WriteLine($"Pagina actual: {historialNavegador.Peek()}");
         }
 
+        //Ejercicio 6 - Paréntesis correctos
+        public static void ParentesisCorrectos()
+        {
+            Stack<string> expresionesAritm = new Stack<string>();
 
+            expresionesAritm.Push("(2 + 3) * (4 + 5)");
+            expresionesAritm.Push("((10 + 5) * 2)");
+            expresionesAritm.Push("(10 + 5) + 5)");
+            expresionesAritm.Push("((10 + 5)");
+
+            int parentesisApertura = 0;
+            int parentesisCierre = 0;
+
+           foreach(string formula in expresionesAritm.Reverse())
+            {
+                parentesisApertura=0;
+                parentesisCierre=0;
+
+                for(int i = 0; i < formula.Length; i++)
+                {
+                    if(formula[i] != '(' && formula[i] != ')')
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        if(formula[i] == '(')
+                        {
+                            parentesisApertura++;
+                        }
+                        else
+                        {
+                            parentesisCierre++;
+                        }
+                    }
+                }
+
+                if(parentesisApertura == parentesisCierre)
+                {
+                    Console.WriteLine(formula + " → Correcta");
+                }
+                else
+                {
+                    Console.WriteLine(formula + " → Incorrecta");
+                }
+            }
+            
+        }
 
     }
-
-
 
 }
