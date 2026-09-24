@@ -1,4 +1,4 @@
-﻿namespace EstructurasDeDatos.Estructuras
+﻿namespace EstructurasDeDatos.Utilities
 {
     public static class Listas
     {
