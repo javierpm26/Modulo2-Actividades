@@ -107,5 +107,56 @@ namespace EstructurasDeDatos.Utilities
                 }
             }
         }
+
+        public static void AgendaContactos()
+        {
+            Dictionary<string, int> contactos = new();
+            contactos.Add("Isabel", 600111222);
+            contactos.Add("Luis", 600333444);
+            contactos.Add("Marta", 600555666);
+            int opcionUsuario = 0;
+
+            while(opcionUsuario != 6)
+            {
+                Console.WriteLine("=== AGENDA ===\n");
+                Console.WriteLine("1. Añadir contacto\n2. Buscar teléfono\n3. Modificar teléfono\n4. Eliminar contacto\n5. Mostrar contactos\n6. Salir");
+
+                // escaner
+                Console.WriteLine("Tu opción: ");
+                opcionUsuario = int.Parse(Console.ReadLine() ?? "");
+
+                switch(opcionUsuario)
+                {
+                    case 1:
+                        Console.WriteLine("Escribe el nombre del nuevo contacto: ");
+                        string nuevoContactoNombre = Console.ReadLine() ?? "";
+                        Console.WriteLine("Ahora escribe su número de teléfono: ");
+                        int nuevoContactoNumero = int.Parse(Console.ReadLine() ?? "");
+                        contactos.Add(nuevoContactoNombre, nuevoContactoNumero);
+                        break;
+                    
+                    case 2: 
+                        Console.WriteLine("Escribe el nombre del contacto que deseas buscar: ");
+                        string buscarContacto = Console.ReadLine() ?? "";
+                        contactos.TryGetValue(buscarContacto, out int contactoBuscado);
+                        Console.WriteLine($"Resultado de la búsqueda: ({buscarContacto})");
+                        break;
+                    
+                    //case 3: 
+                        //Console.WriteLine("Escribe el número de teléfono que deseas cambiar: ");
+                        //int modificarTelefono = int.Parse(Console.ReadLine() ?? "");
+
+                        //contactos[modificarTelefono] = 
+
+                        
+                        
+
+                }
+
+            }
+        }
+        
+            
+        
     }
 }

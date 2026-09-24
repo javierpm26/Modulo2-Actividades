@@ -45,7 +45,10 @@ namespace EstructurasDeDatos
             //PARTE 4 - DICCIONARIOS
 
             // Ejercicio 10 - Puntuaciones
-            Diccionarios.PuntuacionesJugadores();
+            //Diccionarios.PuntuacionesJugadores();
+
+            // Ejercicio 11 - Agenda de contactos
+            Diccionarios.AgendaContactos();
         }
     }
 }
