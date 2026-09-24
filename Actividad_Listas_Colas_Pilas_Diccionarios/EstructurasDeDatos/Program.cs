@@ -12,10 +12,10 @@ namespace EstructurasDeDatos
             //Listas.Playlist();
 
             // Ejercicio 2 - Lista de la compra: Llamada al método
-            //Listas.listaCompra();
+            //Listas.ListaCompra();
 
             // Ejercicio 3 - Gestor de Tareas: Llamada al método
-            //Listas.gestorTareas();
+            //Listas.GestorTareas();
 
 
             //PARTE 2 - PILAS
@@ -33,13 +33,19 @@ namespace EstructurasDeDatos
             //PARTE 3 - COLAS
 
             // Ejercicio 7 - Cola del supermercado
-            //Colas.colaSupermercado();
+            //Colas.ColaSupermercado();
 
             // Ejercicio 8 - Servicio de soporte
-            //Colas.servicioSoporte();
+            //Colas.ServicioSoporte();
 
             // Ejercicio 9 - Entradas para un concierto
-            Colas.entradasConcierto();
+            //Colas.EntradasConcierto();
+
+
+            //PARTE 4 - DICCIONARIOS
+
+            // Ejercicio 10 - Puntuaciones
+            Diccionarios.PuntuacionesJugadores();
         }
     }
 }

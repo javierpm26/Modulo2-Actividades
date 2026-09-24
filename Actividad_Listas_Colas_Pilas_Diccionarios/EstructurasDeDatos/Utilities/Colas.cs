@@ -5,7 +5,7 @@ namespace EstructurasDeDatos.Utilities
     public static class Colas
     {
         // Ejercicio 7 - Cola del Supermecado
-        public static void colaSupermercado()
+        public static void ColaSupermercado()
         {
             Queue<string> colaDelSuper = new Queue<string>();
             colaDelSuper.Enqueue("Isabel");
@@ -28,7 +28,7 @@ namespace EstructurasDeDatos.Utilities
         }
 
         //Ejercicio 8 - Servicio de soporte
-        public static void servicioSoporte()
+        public static void ServicioSoporte()
         {
             Queue<string> colaSoporte = new Queue<string>();
             int opcionMenu = 0;
@@ -112,7 +112,8 @@ namespace EstructurasDeDatos.Utilities
             }
         }
 
-        public static void entradasConcierto()
+        //Ejercicio 9 - Entradas para un concierto
+        public static void EntradasConcierto()
         {
             Queue<string> colaConcierto = new Queue<string>();
             colaConcierto.Enqueue("Laura");
@@ -156,11 +157,6 @@ namespace EstructurasDeDatos.Utilities
             {
                 Console.WriteLine(personasEsperando);
             }
-
-
-            
-
-
             
         }
     }

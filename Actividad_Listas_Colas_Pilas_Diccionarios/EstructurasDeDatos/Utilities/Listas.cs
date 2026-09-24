@@ -41,7 +41,7 @@
 
 
         // Ejercicio 2 - Lista de la compra
-        public static void listaCompra()
+        public static void ListaCompra()
         {
             int opcionMenu = 0;
 
@@ -125,7 +125,7 @@
 
 
         // Ejercicio 3 - Gestor de Tareas
-        public static void gestorTareas()
+        public static void GestorTareas()
         {
             int opcionUsuario = 0;
 
