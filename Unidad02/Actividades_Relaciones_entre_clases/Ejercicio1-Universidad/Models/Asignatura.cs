@@ -1,4 +1,4 @@
-namespace RelacionesEntreClases
+namespace RelacionesEntreClasesUniversidad
 {
     /// <summary>
     /// Representa una asignatura de la universidad.

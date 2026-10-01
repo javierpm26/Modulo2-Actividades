@@ -1,4 +1,4 @@
-namespace RelacionesEntreClases
+namespace RelacionesEntreClasesUniversidad
 {
     /// <summary>
     /// Representa un profesor de la universidad.

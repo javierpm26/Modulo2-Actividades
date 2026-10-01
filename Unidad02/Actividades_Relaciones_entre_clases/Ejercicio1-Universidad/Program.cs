@@ -1,4 +1,4 @@
-﻿namespace RelacionesEntreClases
+﻿namespace RelacionesEntreClasesUniversidad
 {
     internal class Program
     {
