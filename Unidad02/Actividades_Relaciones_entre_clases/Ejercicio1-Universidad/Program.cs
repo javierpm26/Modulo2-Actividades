@@ -1,127 +1,130 @@
-﻿using System;
-
-namespace RelacionesEntreClases
+﻿namespace RelacionesEntreClases
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            // =============================================
             // EJERCICIO 1 - UNIVERSIDAD
-            // =============================================
 
-            // MER / RELACIONES:
-            // Profesor N:M Asignatura
-            // Alumno N:M Asignatura
-            // Departamento 1:N Asignatura
+            // Departamentos
+            Departamento deptInformatica = new Departamento("Informática");
+            Departamento deptMatematicas = new Departamento("Matemáticas");
 
-            // =============================================
-            // CREAR DEPARTAMENTOS
-            Departamento departamentoInformatica = new Departamento("Informática");Departamento departamentoMatematicas = new Departamento("Matemáticas");
+            // Asignaturas
+            Asignatura asigProgramacion =
+                new Asignatura("Programación", deptInformatica);
 
-            // =============================================
-            // CREAR ASIGNATURAS
-            // Cada asignatura pertenece a un único departamento.
-            Asignatura asignaturaProgramacion = new Asignatura(
-                    "Programación",
-                    departamentoInformatica
-                );
+            Asignatura asigBasesDatos =
+                new Asignatura("Bases de Datos", deptInformatica);
 
-            Asignatura asignaturaBasesDatos =
-                new Asignatura(
-                    "Bases de Datos",
-                    departamentoInformatica
-                );
+            Asignatura asigMatematicasAplicadas =
+                new Asignatura("Matemáticas Aplicadas", deptMatematicas);
 
-            Asignatura asignaturaMatematicasAplicadas =
-                new Asignatura(
-                    "Matemáticas Aplicadas",
-                    departamentoMatematicas
-                );
+            // Profesores
+            Profesor profeFran = new Profesor("Fran");
+            Profesor profeAlberto = new Profesor("Alberto");
+            Profesor profeLaura = new Profesor("Laura");
 
-            // =============================================
-            // CREAR PROFESORES
-            Profesor profesorFran = new Profesor("Fran");
-            Profesor profesorAlberto = new Profesor("Alberto");
-            Profesor profesorLaura = new Profesor("Laura");
-
-            // =============================================
-            // CREAR ALUMNOS
-            Alumno alumnoAna = new Alumno("Ana");
-            Alumno alumnoCarlos = new Alumno("Carlos");
-            Alumno alumnoLucia = new Alumno("Lucía");
+            // Alumnos
+            Alumno alumAna = new Alumno("Ana");
+            Alumno alumCarlos = new Alumno("Carlos");
+            Alumno alumLucia = new Alumno("Lucía");
 
 
-            // =============================================
-            // RELACIÓN PROFESOR - ASIGNATURA
+            // Asignar asignaturas a departamentos
+            deptInformatica.AnadirAsignaturaADepartamento(asigProgramacion);
+            deptInformatica.AnadirAsignaturaADepartamento(asigBasesDatos);
+            deptMatematicas.AnadirAsignaturaADepartamento(asigMatematicasAplicadas);
 
-            // Relación N:M:
-            // un profesor puede impartir varias asignaturas
-            // y una asignatura puede ser impartida por varios profesores.
 
-            asignaturaProgramacion.AsignarProfesor(profesorAlberto);
-            asignaturaProgramacion.AsignarProfesor(profesorFran);
+            // Asignar profesores a asignaturas
+            asigProgramacion.NuevoProfesorImpartiendo(profeAlberto);
+            asigProgramacion.NuevoProfesorImpartiendo(profeFran);
 
-            asignaturaBasesDatos.AsignarProfesor(profesorFran);
-            asignaturaBasesDatos.AsignarProfesor(profesorLaura);
+            asigBasesDatos.NuevoProfesorImpartiendo(profeFran);
+            asigBasesDatos.NuevoProfesorImpartiendo(profeLaura);
 
-            asignaturaMatematicasAplicadas.AsignarProfesor(profesorLaura);
+            asigMatematicasAplicadas.NuevoProfesorImpartiendo(profeLaura);
 
-            // =============================================
-            // RELACIÓN ALUMNO - ASIGNATURA
 
-            // Relación N:M:
-            // un alumno puede matricularse en varias asignaturas
-            // y una asignatura puede tener varios alumnos.
+            // Asignar asignaturas a profesores
+            profeAlberto.NuevaAsignacion(asigProgramacion);
 
-            asignaturaProgramacion.MatricularAlumno(alumnoAna);
+            profeFran.NuevaAsignacion(asigProgramacion);
+            profeFran.NuevaAsignacion(asigBasesDatos);
 
-            asignaturaBasesDatos.MatricularAlumno(alumnoAna);
-            asignaturaBasesDatos.MatricularAlumno(alumnoCarlos);
+            profeLaura.NuevaAsignacion(asigBasesDatos);
+            profeLaura.NuevaAsignacion(asigMatematicasAplicadas);
 
-            asignaturaMatematicasAplicadas.MatricularAlumno(alumnoCarlos);
-            asignaturaMatematicasAplicadas.MatricularAlumno(alumnoLucia);
 
-            // =============================================
-            // MOSTRAR INFORMACIÓN DE LAS ASIGNATURAS
+            // Matricular alumnos en asignaturas
+            alumAna.NuevaMatriculacionAsignatura(asigProgramacion);
+            alumAna.NuevaMatriculacionAsignatura(asigBasesDatos);
 
-            // Cumple el requisito:
-            // "Mostrar la información de una asignatura
-            // y las personas relacionadas con ella."
+            alumCarlos.NuevaMatriculacionAsignatura(asigBasesDatos);
+            alumCarlos.NuevaMatriculacionAsignatura(asigMatematicasAplicadas);
 
-            asignaturaProgramacion.MostrarInformacionAsignatura();
+            alumLucia.NuevaMatriculacionAsignatura(asigMatematicasAplicadas);
+
+
+            // Añadir alumnos matriculados a cada asignatura
+            asigProgramacion.NuevaMatriculacionAlumno(alumAna);
+
+            asigBasesDatos.NuevaMatriculacionAlumno(alumAna);
+            asigBasesDatos.NuevaMatriculacionAlumno(alumCarlos);
+
+            asigMatematicasAplicadas.NuevaMatriculacionAlumno(alumCarlos);
+            asigMatematicasAplicadas.NuevaMatriculacionAlumno(alumLucia);
+
+
+            // Información de Programación
+            Console.WriteLine($"La asignatura {asigProgramacion.NombreAsignatura} pertenece al departamento de {asigProgramacion.DepartamentoAsignatura.NombreDepartamento}.");
 
             Console.WriteLine();
 
-            asignaturaBasesDatos.MostrarInformacionAsignatura();
+            Console.WriteLine("La imparten los profesores:");
+            asigProgramacion.MostrarProfesoresImpartiendo();
 
             Console.WriteLine();
 
-            asignaturaMatematicasAplicadas.MostrarInformacionAsignatura();
-
-
-            // =============================================
-            // COMPROBAR LAS RELACIONES DESDE EL OTRO LADO DE LA CLASE
+            Console.WriteLine("Están matriculados los alumnos:");
+            asigProgramacion.MostrarAlumnosMatriculados();
 
             Console.WriteLine();
-            Console.WriteLine("COMPROBACIÓN DESDE PROFESOR");
+            Console.WriteLine("-----------------------------");
             Console.WriteLine();
 
-            profesorFran.MostrarAsignaturasImpartidas();
 
-
-            Console.WriteLine();
-            Console.WriteLine("COMPROBACIÓN DESDE ALUMNO");
-            Console.WriteLine();
-
-            alumnoAna.MostrarAsignaturasMatriculadas();
-
+            // Información de Bases de Datos
+            Console.WriteLine($"La asignatura {asigBasesDatos.NombreAsignatura} pertenece al departamento de {asigBasesDatos.DepartamentoAsignatura.NombreDepartamento}.");
 
             Console.WriteLine();
-            Console.WriteLine("COMPROBACIÓN DESDE DEPARTAMENTO");
+
+            Console.WriteLine("La imparten los profesores:");
+            asigBasesDatos.MostrarProfesoresImpartiendo();
+
             Console.WriteLine();
 
-            departamentoInformatica.MostrarAsignaturasDepartamento();
+            Console.WriteLine("Están matriculados los alumnos:");
+            asigBasesDatos.MostrarAlumnosMatriculados();
+
+            Console.WriteLine();
+            Console.WriteLine("-----------------------------");
+            Console.WriteLine();
+
+
+            // Información de Matemáticas Aplicadas
+            Console.WriteLine($"La asignatura {asigMatematicasAplicadas.NombreAsignatura} pertenece al departamento de {asigMatematicasAplicadas.DepartamentoAsignatura.NombreDepartamento}.");
+
+            Console.WriteLine();
+
+            Console.WriteLine("La imparten los profesores:");
+            asigMatematicasAplicadas.MostrarProfesoresImpartiendo();
+
+            Console.WriteLine();
+
+            Console.WriteLine("Están matriculados los alumnos:");
+            asigMatematicasAplicadas.MostrarAlumnosMatriculados();
         }
     }
 }
