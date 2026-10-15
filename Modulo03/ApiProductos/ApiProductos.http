@@ -1,0 +1,70 @@
+@host = http://localhost:5085
+
+### Información de la API
+GET {{host}}/
+
+### Estado de salud
+GET {{host}}/api/health
+
+### Ayuda / lista de endpoints
+GET {{host}}/api/ayuda
+
+### Obtener todos los productos
+GET {{host}}/api/productos
+
+### Obtener un producto existente
+GET {{host}}/api/productos/1
+
+### Buscar un producto inexistente: debe devolver 404
+GET {{host}}/api/productos/9999
+
+### Filtrar por categoría
+GET {{host}}/api/productos?categoria=Instrumentación
+
+### Filtrar por precio máximo
+GET {{host}}/api/productos?precioMax=200
+
+### Categorías disponibles
+GET {{host}}/api/categorias
+
+### Estadísticas de productos
+GET {{host}}/api/productos/estadisticas
+
+### Crear un producto: debe devolver 201 Created
+POST {{host}}/api/productos
+Content-Type: application/json
+
+{
+  "nombre": "Sonda de temperatura",
+  "descripcion": "Sonda para registrar la temperatura del agua.",
+  "categoria": "Instrumentación",
+  "precio": 149.95,
+  "stock": 5
+}
+
+### POST inválido: debe devolver 400 Bad Request
+POST {{host}}/api/productos
+Content-Type: application/json
+
+{
+  "nombre": "",
+  "descripcion": "",
+  "categoria": "Instrumentación",
+  "precio": -10,
+  "stock": -1
+}
+
+### Modificar producto 1: debe devolver 200 OK
+PUT {{host}}/api/productos/1
+Content-Type: application/json
+
+{
+  "nombre": "Portátil de exploración actualizado",
+  "descripcion": "Portátil resistente para investigación submarina.",
+  "categoria": "Informática",
+  "precio": 1349.90,
+  "stock": 7
+}
+
+### Eliminar producto 6: debe devolver 204 No Content
+DELETE {{host}}/api/productos/6

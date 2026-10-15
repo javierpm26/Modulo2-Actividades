@@ -1,0 +1,64 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="prestamos-despliegue-ordenado" name="Despliegue - Préstamos de Equipos">
+    <mxGraphModel dx="1106" dy="1041" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1550" pageHeight="760" background="#171B22" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#20252E;strokeColor=#B8C9DD;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="300" width="350" x="70" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6DAAF2;strokeColor=#B8C9DD;strokeWidth=1.5;fontColor=#10253E;fontStyle=1;fontSize=19;align=center;verticalAlign=middle;" value="&lt;div style=&quot;font-style: italic; font-weight: normal;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;«device»&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size:18px;font-weight:bold;&quot;&gt;PC del centro&lt;/div&gt;" vertex="1">
+          <mxGeometry height="55" width="350" x="70" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#20252E;strokeColor=#B8C9DD;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="300" width="410" x="570" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6DAAF2;strokeColor=#B8C9DD;strokeWidth=1.5;fontColor=#10253E;fontStyle=1;fontSize=19;align=center;verticalAlign=middle;" value="&lt;div style=&quot;font-style: italic; font-weight: normal;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;«device»&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size:18px;font-weight:bold;&quot;&gt;Servidor de aplicación&lt;/div&gt;" vertex="1">
+          <mxGeometry height="55" width="410" x="570" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#20252E;strokeColor=#B8C9DD;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="300" width="350" x="1130" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6DAAF2;strokeColor=#B8C9DD;strokeWidth=1.5;fontColor=#10253E;fontStyle=1;fontSize=19;align=center;verticalAlign=middle;" value="&lt;div style=&quot;font-style: italic; font-weight: normal;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;«device»&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size:18px;font-weight:bold;&quot;&gt;Servidor de BD&lt;/div&gt;" vertex="1">
+          <mxGeometry height="55" width="350" x="1130" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#303A4A;strokeColor=#C7D5E7;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=17;align=center;verticalAlign=middle;" value="&lt;div style=&quot;font-style: italic; font-weight: normal;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;«artifact»&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size:17px;font-weight:normal;&quot;&gt;Navegador web&lt;/div&gt;" vertex="1">
+          <mxGeometry height="88" width="250" x="120" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="9" parent="1" style="text;html=1;fillColor=none;strokeColor=none;fontColor=#FFFFFF;fontSize=17;align=center;verticalAlign=middle;whiteSpace=wrap;" value="Entorno de ejecución: servidor web" vertex="1">
+          <mxGeometry height="35" width="340" x="605" y="208" as="geometry" />
+        </mxCell>
+        <mxCell id="10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#303A4A;strokeColor=#C7D5E7;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=17;align=center;verticalAlign=middle;" value="&lt;div style=&quot;font-style: italic; font-weight: normal;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;«artifact»&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size:17px;font-weight:normal;&quot;&gt;Aplicación de préstamos&lt;/div&gt;" vertex="1">
+          <mxGeometry height="88" width="290" x="630" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="11" parent="1" style="text;html=1;fillColor=none;strokeColor=none;fontColor=#FFFFFF;fontSize=17;align=center;verticalAlign=middle;whiteSpace=wrap;" value="Entorno: motor de BD" vertex="1">
+          <mxGeometry height="35" width="270" x="1170" y="208" as="geometry" />
+        </mxCell>
+        <mxCell id="12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#303A4A;strokeColor=#C7D5E7;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=17;align=center;verticalAlign=middle;" value="&lt;div style=&quot;font-style: italic; font-weight: normal;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;«artifact»&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size:17px;font-weight:normal;&quot;&gt;BD de préstamos&lt;/div&gt;" vertex="1">
+          <mxGeometry height="88" width="270" x="1170" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#20252E;strokeColor=#B8C9DD;strokeWidth=2;fontColor=#FFFFFF;fontSize=18;align=center;verticalAlign=middle;" value="&lt;div style=&quot;font-style: italic; font-weight: normal;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;«external system»&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size:18px;font-weight:normal;&quot;&gt;Servicio de correo electrónico&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="360" x="670" y="555" as="geometry" />
+        </mxCell>
+        <mxCell id="14" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#F2F6FC;strokeWidth=2;startArrow=none;endArrow=none;fontColor=#F2F6FC;fontSize=17;labelBackgroundColor=#171B22;" value="HTTPS">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="285" as="sourcePoint" />
+            <mxPoint x="570" y="285" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="15" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#F2F6FC;strokeWidth=2;startArrow=none;endArrow=none;fontColor=#F2F6FC;fontSize=17;labelBackgroundColor=#171B22;" value="SQL/TCP">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="980" y="285" as="sourcePoint" />
+            <mxPoint x="1130" y="285" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="16" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#F2F6FC;strokeWidth=2;startArrow=none;endArrow=none;fontColor=#F2F6FC;fontSize=17;labelBackgroundColor=#171B22;" value="HTTPS">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="775" y="425" as="sourcePoint" />
+            <mxPoint x="775" y="555" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
