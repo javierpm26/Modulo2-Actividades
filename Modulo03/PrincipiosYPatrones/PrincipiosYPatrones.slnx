@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="01_SRP_Restaurante/01_SRP_Restaurante.csproj" />
+  <Project Path="02_OCP_Enchufes/02_OCP_Enchufes.csproj" />
+  <Project Path="03_Singleton_Marcador/03_Singleton_Marcador.csproj" />
+  <Project Path="04_FactoryMethod_Documentos/04_FactoryMethod_Documentos.csproj" />
+</Solution>

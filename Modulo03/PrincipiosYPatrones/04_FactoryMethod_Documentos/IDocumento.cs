@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ImplementacionDiagramaUM
+namespace FactoryMethod_Documentos
 {
-    public class PrestamoService
+    interface IDocumento
     {
-
+        void Abrir();
     }
 }

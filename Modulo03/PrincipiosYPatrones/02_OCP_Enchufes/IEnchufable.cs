@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ImplementacionDiagramaUM
+namespace OCP_Enchufes
 {
-    internal interface IPrestamoRepository
+    interface IEnchufable
     {
+        void Encender();
     }
 }
