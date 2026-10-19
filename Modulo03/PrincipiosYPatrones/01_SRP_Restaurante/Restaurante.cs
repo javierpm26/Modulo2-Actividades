@@ -2,22 +2,23 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SRP_Restaurante;
-
-class Restaurante
+namespace SRP_Restaurante
 {
-    public void Cocinar()
+    class Restaurante
     {
-        Console.WriteLine("Preparando comida");
-    }
+        public void Cocinar()
+        {
+            Console.WriteLine("Preparando comida");
+        }
 
-    public void Atender()
-    {
-        Console.WriteLine("Atendiendo clientes");
-    }
+        public void Atender()
+        {
+            Console.WriteLine("Atendiendo clientes");
+        }
 
-    public void LlevarCuentas()
-    {
-        Console.WriteLine("Revisando facturas");
+        public void LlevarCuentas()
+        {
+            Console.WriteLine("Revisando facturas");
+        }
     }
 }

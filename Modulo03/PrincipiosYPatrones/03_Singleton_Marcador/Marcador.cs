@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace Singleton_Marcador
 {
     class Marcador
     {
-        private static Marcador instancia = new Marcador();
+        private static Marcador? instancia = null;
 
         public int Puntos = 0;
 
@@ -17,6 +17,11 @@ namespace Singleton_Marcador
 
         public static Marcador ObtenerInstancia()
         {
+            if (instancia == null)
+            {
+                instancia = new Marcador();
+            }
+
             return instancia;
         }
     }

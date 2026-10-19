@@ -11,6 +11,7 @@ namespace FactoryMethod_Documentos
         public void NuevoDocumento()
         {
             IDocumento documento = CrearDocumento();
+
             documento.Abrir();
         }
     }

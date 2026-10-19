@@ -17,9 +17,14 @@
 
             Casa casaNueva = new Casa();
 
-            casaNueva.Encender(new Lampara());
-            casaNueva.Encender(new Cafetera());
-            casaNueva.Encender(new Ventilador());
+            Lampara lampara = new Lampara();
+            Cafetera cafetera = new Cafetera();
+            Ventilador ventilador = new Ventilador();
+
+            casaNueva.Encender(lampara);
+            casaNueva.Encender(cafetera);
+
+            casaNueva.Encender(ventilador);
         }
     }
 }

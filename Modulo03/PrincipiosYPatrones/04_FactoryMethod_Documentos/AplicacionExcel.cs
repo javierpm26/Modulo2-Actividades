@@ -8,7 +8,9 @@ namespace FactoryMethod_Documentos
     {
         public override IDocumento CrearDocumento()
         {
-            return new DocumentoExcel();
+            DocumentoExcel documento = new DocumentoExcel();
+
+            return documento;
         }
     }
 }
